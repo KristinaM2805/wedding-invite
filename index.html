@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Кристина & Панда | Свадебное приглашение</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="subhead">Мы приглашаем вас на нашу свадьбу!</div>
+            <div class="names-big">Кристина & Панда</div>
+            <div class="photo-grid">
+                <div class="couple-photo photo-placeholder">👰‍♀️</div>
+                <div class="couple-photo photo-placeholder">🐼</div>
+            </div>
+            <div class="photo-caption">Кристина & Панда — 31 мая 2026</div>
+            <div class="invite-text">«Самая тёплая и уютная история любви»</div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>✨ Наши сердца бьются в унисон ✨</h2>
+            <div class="couple-names">
+                <span class="name">Кристина</span>
+                <span class="heart">❤️</span>
+                <span class="name">Панда</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📍 Место проведения</h2>
+            <div class="location-block">
+                <img class="map-img" src="https://images.unsplash.com/photo-1622104640246-6e5c6f2e0c9a?w=800&h=500&fit=crop" alt="Усадьба Радзивилки" onerror="this.src='https://placehold.co/600x400/f5e6da/a97c5f?text=Усадьба+Радзивилки'">
+                <div class="address">
+                    <p>📍 <strong>Беларусь, город Гродно, усадьба Радзивилки</strong></p>
+                    <p>🌿 Живописный парк, историческая атмосфера, идеальное место для свадебного торжества.</p>
+                    <p>🗺️ <a href="#" id="openMap" class="map-link">Открыть карту</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⏳ Тайминг дня</h2>
+            <div class="timeline">
+                <div class="timeline-item"><span class="time">15:00</span><span class="event">Сбор гостей & welcome-drink</span></div>
+                <div class="timeline-item"><span class="time">16:00</span><span class="event">Торжественная церемония</span></div>
+                <div class="timeline-item"><span class="time">17:30</span><span class="event">Фуршет & фотосессия в парке</span></div>
+                <div class="timeline-item"><span class="time">19:00</span><span class="event">Банкет, тосты и танцы</span></div>
+                <div class="timeline-item"><span class="time">23:00</span><span class="event">Свадебный торт и фейерверк</span></div>
+                <div class="timeline-item"><span class="time">00:00</span><span class="event">Afterparty (по желанию)</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌸 Дресс-код: Элегантный сад</h2>
+            <div class="dress-palette">
+                <div class="color-swatch"><div class="circle" style="background: #c77a4a;"></div><span>Терракота</span></div>
+                <div class="color-swatch"><div class="circle" style="background: #8ba888;"></div><span>Оливковый</span></div>
+                <div class="color-swatch"><div class="circle" style="background: #f2e0c9;"></div><span>Шампань</span></div>
+                <div class="color-swatch"><div class="circle" style="background: #f5cdb2;"></div><span>Нежно-розовый</span></div>
+                <div class="color-swatch"><div class="circle" style="background: #dabf9b;"></div><span>Бежевый</span></div>
+            </div>
+            <div class="dress-example">
+                <div class="example-item"><div class="ex-img">👗</div><div class="ex-text">Платье миди/макси</div></div>
+                <div class="example-item"><div class="ex-img">🤵‍♂️</div><div class="ex-text">Костюм / пиджак</div></div>
+                <div class="example-item"><div class="ex-img">🌿</div><div class="ex-text">Аксессуары из натуральных тканей</div></div>
+            </div>
+            <div class="dress-note">💡 Вдохновение: цветочный принт, легкие ткани. Пожалуйста, избегайте белого цвета ✨</div>
+        </div>
+
+        <div class="card" id="rsvp">
+            <h2>📝 Пожалуйста, подтвердите присутствие</h2>
+            <p class="form-note">Заполните форму, чтобы мы знали, что готовить для вас ❤️</p>
+            <form id="guestForm">
+                <div class="form-group">
+                    <label>Ваше ФИО *</label>
+                    <input type="text" id="fullname" placeholder="Иванова Анна Сергеевна" required>
+                </div>
+                <div class="form-group">
+                    <label>Вы придёте?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="attendance" value="Приду с радостью!" required> Приду с радостью!</label>
+                        <label><input type="radio" name="attendance" value="К сожалению, не смогу"> К сожалению, не смогу</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Что предпочитаете из напитков? (можно выбрать несколько)</label>
+                    <div class="drink-options">
+                        <label><input type="checkbox" value="Шампанское"> 🥂 Шампанское</label>
+                        <label><input type="checkbox" value="Белое вино"> 🍾 Белое вино</label>
+                        <label><input type="checkbox" value="Красное вино"> 🍷 Красное вино</label>
+                        <label><input type="checkbox" value="Виски/Коктейль"> 🥃 Крепкий</label>
+                        <label><input type="checkbox" value="Безалкогольное"> 🧃 Безалкогольное</label>
+                        <label><input type="checkbox" value="Сок/вода"> 💧 Сок/вода</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn" id="submitBtn">Отправить ответ</button>
+                <div id="formStatus"></div>
+            </form>
+        </div>
+
+        <div class="card telegram-card">
+            <h2>💬 Присоединяйтесь к чату</h2>
+            <p>Все обновления, детали, голосования и живое общение в нашем Telegram-чате.</p>
+            <a href="https://t.me/+example_swedding_chat" target="_blank" class="telegram-link">
+                📱 Перейти в общий чат гостей
+            </a>
+        </div>
+
+        <div class="footer-note">
+            Кристина & Панда ❤️ С нетерпением ждём вас!<br>
+            По всем вопросам — пишите в Telegram-чат.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
