@@ -18,7 +18,6 @@ function getSelectedDrinks() {
     return selected.length ? selected.join(', ') : 'Не указано';
 }
 
-// НОВАЯ ФУНКЦИЯ: получает ответ про венчание
 function getVenchanieAnswer() {
     const selectedRadio = document.querySelector('input[name="venchanie"]:checked');
     return selectedRadio ? selectedRadio.value : 'Не указано';
@@ -52,7 +51,7 @@ if (form) {
         }
 
         const attendanceValue = checkedAttendance.value;
-        const venchanieValue = getVenchanieAnswer();  // <- НОВОЕ ПОЛЕ
+        const venchanieValue = getVenchanieAnswer(); 
         const drinks = getSelectedDrinks();
 
         submitBtn.disabled = true;
