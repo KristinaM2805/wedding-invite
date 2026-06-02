@@ -1,4 +1,4 @@
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwELBdkVoYW2on27xpLaOV-1PU0dBnQ_modEK7RjWT3A5zF8wx5M4Nhs0K8WNPf7Aqq/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZ8iW3eIXaM_wp3I9SrFkUESD42c31Ug2XcsXDVBRWh0oDdDbntx9A-UHQ3p608uY/exec';
 
 const form = document.getElementById('guestForm');
 const statusDiv = document.getElementById('formStatus');
@@ -16,6 +16,12 @@ function getSelectedDrinks() {
     });
 
     return selected.length ? selected.join(', ') : 'Не указано';
+}
+
+// НОВАЯ ФУНКЦИЯ: получает ответ про венчание
+function getVenchanieAnswer() {
+    const selectedRadio = document.querySelector('input[name="venchanie"]:checked');
+    return selectedRadio ? selectedRadio.value : 'Не указано';
 }
 
 function saveToLocalStorage(data) {
@@ -46,6 +52,7 @@ if (form) {
         }
 
         const attendanceValue = checkedAttendance.value;
+        const venchanieValue = getVenchanieAnswer();  // <- НОВОЕ ПОЛЕ
         const drinks = getSelectedDrinks();
 
         submitBtn.disabled = true;
@@ -53,9 +60,10 @@ if (form) {
         statusDiv.innerHTML = '';
 
         const formData = {
-            fullname,
+            fullname: fullname,
             attendance: attendanceValue,
-            drinks,
+            venchanie: venchanieValue,   // <- НОВОЕ ПОЛЕ
+            drinks: drinks,
             timestamp: new Date().toLocaleString('ru-RU')
         };
 
@@ -71,9 +79,13 @@ if (form) {
 
             saveToLocalStorage(formData);
 
-            const successMessage = attendanceValue === 'Приду с радостью!'
+            let successMessage = attendanceValue === 'Приду с радостью!'
                 ? `Спасибо, ${fullname}! Ждём вас на празднике ❤️ Напитки: ${drinks}.`
                 : `Очень жаль, ${fullname}, что не сможете быть. Спасибо за ответ ❤️`;
+            
+            if (venchanieValue !== 'Не указано') {
+                successMessage += ` Ответ про венчание: ${venchanieValue}.`;
+            }
 
             statusDiv.innerHTML = `<div class="success-msg">${successMessage}<br><span>Ответ сохранён в таблице организаторов.</span></div>`;
             form.reset();
@@ -174,7 +186,6 @@ lightbox?.addEventListener('click', (event) => {
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeLightbox();
 });
-
 
 const heroHotspots = [...document.querySelectorAll('.person-hotspot')];
 const heroBubbles = [...document.querySelectorAll('.quote-bubble')];
