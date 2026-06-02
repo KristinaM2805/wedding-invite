@@ -1,4 +1,4 @@
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZ8iW3eIXaM_wp3I9SrFkUESD42c31Ug2XcsXDVBRWh0oDdDbntx9A-UHQ3p608uY/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwUhNxfEd6I-CD_VzDf1R9pMLIPPfVa67mMAcqIF37qdHNDC35jY_5ayPzHQEji6R4m/exec';
 
 const form = document.getElementById('guestForm');
 const statusDiv = document.getElementById('formStatus');
